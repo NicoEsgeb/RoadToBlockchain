@@ -19,3 +19,15 @@ The answers are:
     /It has 2 main parts:
         a- The chain itself (a list of blocks)
         b- The current transactions (List of transactions that will be added to the next block)
+
+2-METHOD A: Create new transactions:
+    /Method that allows to add new transactions to the blockchain
+    /These transactions will be included in the next block mined
+    /Transaction: Transfer of coins(tokens) from one account to another
+
+3-METHOD B: Create new Blocks:
+    /This method allows to add new blocks to the blockchain
+    /Each block will include: 
+        a-Current list of transactions
+        b-timestamp
+        c-Reference to the previous block in the chain (This is what makes the chain a CHAIN)
