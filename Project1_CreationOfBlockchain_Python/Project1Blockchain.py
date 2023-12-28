@@ -44,7 +44,7 @@ class Blockchain:
         self.current_transactions.append({
         """
         -This ADDS the INPUT information to the self.current_transaction LIST
-        -The information is added as a dictionary with the following 3 ky-value pairs
+        -The information is added as a dictionary with the following 3 key-value pairs
         """
             'sender': sender,
             'recipient': recipient,
@@ -56,9 +56,11 @@ class Blockchain:
             the POSITION OF THE NEXT BLOCK in which this TRANSACTION is going to be ADDED
 
         -------OVERALL-------
-        This method takes in the details of a transaction, adds that 
-        transaction to a list of pending transactions, and then indicates that this transaction 
-        will be included in the next block to be added to the blockchain.
+        This method Does 3 things:
+            1- It TAKES IN the DETAILS of a TRANSACTION.
+            2- ADDS that transaction to a list of pending transactions
+            3- Indicates that this transaction will be included in the next 
+                block to be added to the blockchain. (Returning the INDEX)
         """
     def new_transaction(self):
         # Adds a new transaction to the list of transactions
