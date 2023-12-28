@@ -4,19 +4,18 @@
 -Blockchain is essentially a chain of Blockch, in which each block contains some data. In the case of Bitcoin, Ethereum, Solana, etc..
 the data is a list of transactions. Blockchain is MORE than that, it can contain bassically any type of information.
 
--------------------------------Wide view about this first small project-----------------------------------------
+--------------------------------What's the aim of this project?---------------------------------
+-To learn the basic concept of blockchain and how a simple blokchain can be build with its basic elements
+in order to understand the main methods and behavior of the code itself.
 
-I need to answer the question "What I am going to do now?"
 
-The answer is:
+-------------------------------How is this project going to be built?--------------------------------------
 
-1-Using python to build a small and simple blockchain
+-Using python
 
 
 ----------------------------------Let's talk about that code-----------------------------------
-I need to now "How I am going to do it?"
-
-The answers are:
+What is the main structure of the code? Which methods are we going to explore in this simple frist approach?
 
 1-Define the Blockchain Class:
 
