@@ -47,5 +47,17 @@ The answers are:
         a-Current list of transactions
 
         b-timestamp
-        
+
         c-Reference to the previous block in the chain (This is what makes the chain a CHAIN)
+
+
+4-METHOD C: Hash Blocks:
+
+    /This metho Takes one block as an input and return a hash(Unique Number)
+
+
+5-METHOD D: Validate the Chain:
+
+    /This method will check the integrity of the entire block
+    /How does it work? It goes to each block and it makes sure that the reference of the previous Block
+        matches the hash of that block. If this references doesn't match, we know that the blockchain has been tampered.
