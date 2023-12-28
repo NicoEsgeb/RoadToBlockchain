@@ -5,6 +5,7 @@
 the data is a list of transactions. Blockchain is MORE than that, it can contain bassically any type of information.
 
 --------------------------------What's the aim of this project?---------------------------------
+
 -To learn the basic concept of blockchain and how a simple blokchain can be build with its basic elements
 in order to understand the main methods and behavior of the code itself.
 
