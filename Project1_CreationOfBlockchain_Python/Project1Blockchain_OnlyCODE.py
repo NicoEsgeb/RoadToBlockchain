@@ -5,9 +5,12 @@ from time import time
 
 class Blockchain:
     def __init__(self):
-        self.chain = []
-        self.current_transactions = []
-
+        self.chain = []  #The Chain
+        self.current_transactions = [] #Currently trassaction
+        self.new_block(previous_hash=1, proof=100) #Genesis Block
+    def __str__(self) -> str:
+        return f"""-The current transaction: {self.current_transactions}
+-TheWhole Chain: {self.chain}"""
 
     def new_transaction(self, sender, recipient, amount):
         self.current_transactions.append({
@@ -54,3 +57,8 @@ class Blockchain:
             current_index += 1
 
         return True
+
+if __name__ == "__main__":
+    alice_chain = Blockchain()    #Creation of the Blockchain
+    alice_chain.new_transaction('Alice', 'Bob', 50)
+    print(alice_chain)

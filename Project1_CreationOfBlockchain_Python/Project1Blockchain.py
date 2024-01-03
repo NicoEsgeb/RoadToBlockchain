@@ -31,6 +31,15 @@ class Blockchain:
                 that is going to be mined
         """
         #------------------------------------------------------------
+
+        #----------------Creation fo Genesis blOCK-------------------
+        self.new_block(previous_hash=1, proof=100)
+        """
+        Wee need to create the "Genesis bLOCK" Because the first real 
+        block that we are going to create needs to be attached
+        to this one. Is the first Link of the Chain.
+        """
+        #------------------------------------------------------------
     #--------------------------------------------------------------------------
 
 
@@ -92,7 +101,17 @@ class Blockchain:
     #--------------------------------------------------------------------------
 
 
-
+    #------------------------Method for visualization--------------------------
+    def __str__(self) -> str:
+        return f"""-The current transaction: {self.current_transactions}
+-TheWhole Chain: {self.chain}"""
+    """
+    This method is only created for the visualization of the current transaction
+    and the blockchain itself.
+    
+    (LEARNING PURPOSES, NOTHING ELSE)
+    """
+    #--------------------------------------------------------------------------
 
 
 
@@ -172,5 +191,43 @@ class Blockchain:
     def last_block(self):
         # Returns the last Block in the chain
         return self.chain[-1]
+    #-----------------------------
+
+
+
+    #------------------Definition of Valid_Chain METHOD------------------------
+    """
+    This method is used to check fi the BlockChain is Valid
+    """
+    def valid_chain(self, chain):
+        """
+        -Chain parameter: Blockchain that we want to Validate
+        """
+        #-------------------
+        last_block = chain[0]
+        """
+        -last_block = chain[0] This gets the first block of the Chain.
+            IS THE STARTING POINT FOR THE VALIDATION
+        """
+        #-------------------
+        current_index = 1
+        """
+        -This set the current index to 1 because we start the validation in the
+            SECOND BLOCK. This is because the first Block is the "genesis" block
+            and doesn't has a previous block to be check with.
+        """
+        #-------------------
+        while current_index < len(chain):
+            block = chain[current_index] #Block to be checked
+            if block['previous_hash'] != self.hash(last_block):
+                return False
+
+            last_block = block
+            current_index += 1
+
+        return True
+
+    #--------------------------------------------------------------------------
+
 
 
