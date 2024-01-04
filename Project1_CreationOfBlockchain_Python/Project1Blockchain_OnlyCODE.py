@@ -59,6 +59,8 @@ class Blockchain:
         return True
 
 if __name__ == "__main__":
-    alice_chain = Blockchain()    #Creation of the Blockchain
-    alice_chain.new_transaction('Alice', 'Bob', 50)
-    print(alice_chain)
+    Nico_chain = Blockchain()    #Creation of the Blockchain
+    Nico_chain.new_transaction('Nico', 'Nacho', 77)
+    Nico_chain.new_block(proof=1)
+    valid = Nico_chain.valid_chain(Nico_chain.chain)
+    print(valid)
