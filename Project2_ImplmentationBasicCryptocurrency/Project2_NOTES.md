@@ -40,7 +40,7 @@ Here are the steps I’ll follow:
 4-/////    PROOF-OF-WORK    /////:
 
     A-Implementation of Proof-of-Work algorithm
-    
+
         This is a piece of data which is difficult (costly, time-consuming) to produce but easy for others to verify and which satisfies certain requirements. Producing a proof of work can be a random process with low probability, so that a lot of trial and error is required on average before a valid proof of work is generated.
 
 
