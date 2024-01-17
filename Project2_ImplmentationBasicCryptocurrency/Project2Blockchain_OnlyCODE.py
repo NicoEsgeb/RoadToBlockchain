@@ -7,17 +7,17 @@ from time import time
 class Blockchain:
     def __init__(self):
         self.chain = []  #The Chain
-        self.current_transactions = [] #Currently trassaction that is going to be added to the next block
+        self.current_transactions = [] #Currently trassaction
         self.new_block(previous_hash=1, proof=100) #Genesis Block
     def __str__(self) -> str:
         return f"""-The current transaction: {self.current_transactions}
 -TheWhole Chain: {self.chain}"""
 
-    def new_transaction(self, sender, recipient, amount):
+    def new_transaction(self, Transaction):
         self.current_transactions.append({
-            'sender': sender,
-            'recipient': recipient,
-            'amount': amount,
+            "Sender": Transaction.sender,
+            "Recipient": Transaction.recipient,
+            "Amount transfered": Transaction.amount
         })
         return self.last_block['index'] + 1
 
@@ -59,11 +59,21 @@ class Blockchain:
 
         return True
 
+class Transaction:
+    def __init__(self, sender, recipient, amount):
+        self.sender = sender
+        self.recipient = recipient
+        self.amount = amount
+
+    def __str__(self):
+        return f"{self.sender} sent {self.amount} to {self.recipient}"
+
+
 if __name__ == "__main__":
-    Nico_chain = Blockchain()    #Creation of the Blockchain 
-    Nico_chain.new_transaction('Nico', 'Nacho', 77) #Creation of New Transaction
-    Nico_chain.new_transaction("Nico","Aniet",99)
+    Nico_chain = Blockchain()    #Creation of the Blockchain
+    transaction1 = Transaction('Nico','Nacho',89)
+    Nico_chain.new_transaction(transaction1)
     Nico_chain.new_block(proof=1)
-    print(Nico_chain)
     valid = Nico_chain.valid_chain(Nico_chain.chain)
     print(valid)
+    print(Nico_chain)
